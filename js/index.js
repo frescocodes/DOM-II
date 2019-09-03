@@ -4,14 +4,27 @@
 const changeBg = document.querySelector('body');
 const changeNav = document.querySelector('header');
 const changeP = document.getElementsByTagName("p");
+
+changeBg.onload = uglyColors();
+
 const moveImgs = document.querySelectorAll('img').forEach(item => {
     item.addEventListener('mouseenter', event => {
-        item.style.transform = "rotateX(30)";
-        item.style.transition = 'all 0.5s';
+        item.style.transform = "rotate(9999999deg)";
+        // item.style.transform = "rotate(283487923deg)";
+        item.style.transition = 'all 180s';
     })
 })
 
-changeBg.onload = uglyColors();
+const scaleNav = document.querySelectorAll('header a').forEach(item => {
+    item.addEventListener('mouseleave', event => {
+        item.style.transform = 'scale(5)';
+        item.style.transition = 'easein 1s';
+    })
+})
+
+const kevOreo = document.querySelector('body').addEventListener('dblclick', event => {
+    changeBg.style.backgroundImage = 'url(https://cdn.discordapp.com/emojis/613072162424619018.png?v=1)';
+})
 
 
 function uglyColors(element) {
